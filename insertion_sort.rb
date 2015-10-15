@@ -10,7 +10,7 @@ class InsertionSort
   def sort
     list_size = list.size
     sorted_list = []
-    loop do
+    until list.empty? do
       current_num = list.shift
       0.upto(list_size - 1) do |n|
         sorted_num = sorted_list[n]
@@ -22,7 +22,6 @@ class InsertionSort
           break
         end
       end
-      break if list.empty?
     end
     sorted_list
   end

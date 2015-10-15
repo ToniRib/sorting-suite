@@ -11,16 +11,15 @@ class BubbleSort
     loop do
       swapped = false
       0.upto(array.length - 2) do |i|
-        prev_num = array[i]
-        current_num = array[i + 1]
-        if current_num < prev_num
-          array[i] = current_num
-          array[i + 1] = prev_num
+        current_num = array[i]
+        next_num = array[i + 1]
+        if next_num < current_num
+          array[i] = next_num
+          array[i + 1] = current_num
           swapped = true
-        else
         end
       end
-      break if !swapped
+      break unless swapped
     end
     array
   end

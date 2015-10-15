@@ -31,6 +31,11 @@ class BubbleSortTest < Minitest::Test
     assert_equal [1, 2, 3, 4, 6, 7, 8, 14, 34, 78, 90], bubble.sort
   end
 
+  def test_can_sort_array_with_duplicate_numbers
+    bubble = BubbleSort.new([7, 2, 4, 9, 4, 8, 8, 1, 3])
+    assert_equal [1, 2, 3, 4, 4, 7, 8, 8, 9], bubble.sort
+  end
+
   def test_can_sort_an_array_of_letters
     bubble = BubbleSort.new(['j', 'e', 'r', 'k'])
     assert_equal ['e', 'j', 'k', 'r'], bubble.sort

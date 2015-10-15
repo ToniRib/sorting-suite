@@ -6,7 +6,7 @@ class BubbleSortTest < Minitest::Test
     assert BubbleSort, "Seems like BubbleSort doesn't exist yet!"
   end
 
-  def test_can_initialize_a_sort
+  def test_can_initialize_a_instance
     bubble = BubbleSort.new
     assert_equal BubbleSort, bubble.class
   end
@@ -21,7 +21,7 @@ class BubbleSortTest < Minitest::Test
     assert_equal ['a', 'b', 'c'], bubble.array
   end
 
-  def test_can_sort_array_of_numbers
+  def test_can_sort_an_array_of_numbers
     bubble = BubbleSort.new([5, 3, 7, 2])
     assert_equal [2, 3, 5, 7], bubble.sort
   end
@@ -31,7 +31,7 @@ class BubbleSortTest < Minitest::Test
     assert_equal [1, 2, 3, 4, 6, 7, 8, 14, 34, 78, 90], bubble.sort
   end
 
-  def test_can_sort_array_of_letters
+  def test_can_sort_an_array_of_letters
     bubble = BubbleSort.new(['j', 'e', 'r', 'k'])
     assert_equal ['e', 'j', 'k', 'r'], bubble.sort
   end

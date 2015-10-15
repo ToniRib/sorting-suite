@@ -8,17 +8,19 @@ class BubbleSort
   end
 
   def sort
-    j = array.length - 1
-    while j > 0
-      for i in 0..(array.length-2)
+    loop do
+      swapped = false
+      0.upto(array.length - 2) do |i|
         prev_num = array[i]
-        current_num = array[i+1]
+        current_num = array[i + 1]
         if current_num < prev_num
           array[i] = current_num
-          array[i+1] = prev_num
+          array[i + 1] = prev_num
+          swapped = true
+        else
         end
       end
-      j -= 1
+      break if !swapped
     end
     array
   end

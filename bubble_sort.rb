@@ -1,5 +1,7 @@
 # TODO: implement namespace
 
+require 'pry'
+
 class BubbleSort
   attr_reader :list
 
@@ -11,13 +13,19 @@ class BubbleSort
     loop do
       swapped = false
       0.upto(list.length - 2) do |i|
-        if list[i + 1] < list[i]
-          list[i], list[i + 1] = list[i + 1], list[i]
-          swapped = true
-        end
+        list[i], list[i + 1], swapped = ordered_numbers(list[i], list[i + 1], swapped)
       end
       break unless swapped
     end
     list
   end
+
+  def ordered_numbers(x, y, swapped)
+    if x <= y
+      [x,y, swapped]
+    else
+      [y,x,true]
+    end
+  end
+
 end

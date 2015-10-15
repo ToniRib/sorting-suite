@@ -6,7 +6,7 @@ class BubbleSortTest < Minitest::Test
     assert BubbleSort, "Seems like BubbleSort doesn't exist yet!"
   end
 
-  def test_can_initialize_a_instance
+  def test_can_initialize_an_instance
     bubble = BubbleSort.new
     assert_equal BubbleSort, bubble.class
   end

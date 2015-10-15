@@ -1,4 +1,4 @@
-require 'pry'
+# TODO: implement namespace
 
 class BubbleSort
   attr_reader :array

@@ -1,4 +1,4 @@
-require 'pry'
+# TODO: implement namespace
 
 class InsertionSort
   attr_reader :array

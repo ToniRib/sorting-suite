@@ -12,10 +12,7 @@ class BubbleSort
   def sort
     loop do
       swapped = false
-      0.upto(list.length - 2) do |i|
-        list[i], list[i + 1], swapped = ordered_numbers(list[i], list[i + 1], swapped)
-      end
-      break unless swapped
+      break unless perform_one_pass(swapped)
     end
     list
   end
@@ -28,4 +25,10 @@ class BubbleSort
     end
   end
 
+  def perform_one_pass(swapped)
+    0.upto(list.length - 2) do |i|
+      list[i], list[i + 1], swapped = ordered_numbers(list[i], list[i + 1], swapped)
+    end
+    swapped
+  end
 end

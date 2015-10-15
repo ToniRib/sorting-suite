@@ -15,4 +15,9 @@ class InsertionSortTest < Minitest::Test
     insert = InsertionSort.new([3, 7, 4])
     assert_equal [3, 7, 4], insert.array
   end
+
+  def test_can_sort_an_array_of_numbers
+    insert = InsertionSort.new([5, 2, 8, 3, 7, 1, 4])
+    assert_equal [1, 2, 3, 4, 5, 7, 8], insert.sort
+  end
 end

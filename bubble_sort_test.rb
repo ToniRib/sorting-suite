@@ -16,19 +16,19 @@ class BubbleSortTest < Minitest::Test
     assert_equal [], bubble_sorter.sort
   end
 
+  def test_can_sort_a_single_digit_array
+    bubble_sorter = BubbleSort.new([1])
+    assert_equal [1], bubble_sorter.sort
+  end
+
   def test_can_accept_an_array_of_numbers
     bubble_sorter = BubbleSort.new([1, 2, 3])
-    assert_equal [1, 2, 3], bubble_sorter.array
+    assert_equal [1, 2, 3], bubble_sorter.list
   end
 
   def test_can_accept_an_array_of_letters
     bubble_sorter = BubbleSort.new(['a', 'b', 'c'])
-    assert_equal ['a', 'b', 'c'], bubble_sorter.array
-  end
-
-  def test_can_sort_a_single_digit_array
-    bubble_sorter = BubbleSort.new([1])
-    assert_equal [1], bubble_sorter.sort
+    assert_equal ['a', 'b', 'c'], bubble_sorter.list
   end
 
   def test_can_sort_an_array_of_numbers

@@ -7,6 +7,6 @@ class MergeSort
 
   def sort
     # use each_slice to split the array! see the enumerator class
-    [1, 2, 3, 4]
+    []
   end
 end

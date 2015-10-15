@@ -8,17 +8,17 @@ class InsertionSort
   end
 
   def sort
-    sorted_list = Array.new(list.length)
+    list_size = list.size
+    sorted_list = []
     loop do
       current_num = list.shift
-      0.upto(sorted_list.length - 1) do |n|
+      0.upto(list_size - 1) do |n|
         sorted_num = sorted_list[n]
         if sorted_num == nil
           sorted_list[n] = current_num
           break
         elsif current_num < sorted_num
           sorted_list.insert(n, current_num)
-          sorted_list.pop
           break
         end
       end

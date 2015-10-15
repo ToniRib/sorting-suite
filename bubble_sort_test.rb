@@ -7,7 +7,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_can_initialize_a_sort
-    bubble = BubbleSort.new([])
+    bubble = BubbleSort.new
     assert_equal BubbleSort, bubble.class
   end
 
@@ -26,12 +26,13 @@ class BubbleSortTest < Minitest::Test
     assert_equal [2, 3, 5, 7], bubble.sort
   end
 
-  def test_can_sort_a_larger_array_of_numbers
+  def test_can_sort_a_large_array_of_numbers
     bubble = BubbleSort.new([3, 14, 8, 90, 4, 2, 6, 78, 34, 1, 7])
     assert_equal [1, 2, 3, 4, 6, 7, 8, 14, 34, 78, 90], bubble.sort
   end
 
   def test_can_sort_array_of_letters
-    
+    bubble = BubbleSort.new(['j', 'e', 'r', 'k'])
+    assert_equal ['e', 'j', 'k', 'r'], bubble.sort
   end
 end

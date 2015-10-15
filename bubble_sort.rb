@@ -3,7 +3,7 @@ require 'pry'
 class BubbleSort
   attr_reader :array
 
-  def initialize(array)
+  def initialize(array = [])
     @array = array
   end
 

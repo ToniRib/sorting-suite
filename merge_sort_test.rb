@@ -16,6 +16,26 @@ class MergeSortTest < Minitest::Test
     assert_equal [], merge_sorter.sort
   end
 
+  def test_can_split_an_array_of_3_digits_in_half
+    merge_sorter = MergeSort.new
+    assert_equal [[1, 2], [3]], merge_sorter.split_in_half([1, 2, 3])
+  end
+
+  def test_can_split_an_array_of_4_digits_in_half
+    merge_sorter = MergeSort.new
+    assert_equal [[1, 2], [3, 4]], merge_sorter.split_in_half([1, 2, 3, 4])
+  end
+
+  def test_can_split_an_array_of_5_digits_in_half
+    merge_sorter = MergeSort.new
+    assert_equal [[1, 2], [3, 4], [5]], merge_sorter.split_in_half([1, 2, 3, 4, 5])
+  end
+
+  def test_can_split_an_array_of_9_digits_in_half
+    merge_sorter = MergeSort.new
+    assert_equal [[1, 2], [3, 4], [5, 6], [7, 8], [9]], merge_sorter.split_in_half([1, 2, 3, 4, 5, 6, 7, 8, 9])
+  end
+
   def test_can_sort_a_single_digit_array
     skip
     merge_sorter = MergeSort.new([1])

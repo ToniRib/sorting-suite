@@ -1,3 +1,5 @@
+# TODO: implement namespace
+
 class MergeSort
   attr_reader :array
 
@@ -8,7 +10,7 @@ class MergeSort
   def sort
     # use each_slice to split the array! see the enumerator class
     sorted_array = []
-    
+
   end
 
   def split_in_half(arr)

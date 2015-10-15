@@ -14,13 +14,17 @@ class BubbleSort
         current_num = array[i]
         next_num = array[i + 1]
         if next_num < current_num
-          array[i] = next_num
-          array[i + 1] = current_num
+          swap_numbers(next_num, current_num, i)
           swapped = true
         end
       end
       break unless swapped
     end
     array
+  end
+
+  def swap_numbers(num1, num2, i)
+    array[i] = num1
+    array[i + 1] = num2
   end
 end

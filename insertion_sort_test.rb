@@ -23,12 +23,12 @@ class InsertionSortTest < Minitest::Test
 
   def test_can_accept_an_array_of_numbers
     insertion_sorter = InsertionSort.new([3, 7, 4])
-    assert_equal [3, 7, 4], insertion_sorter.array
+    assert_equal [3, 7, 4], insertion_sorter.list
   end
 
   def test_can_accept_an_array_of_letters
     insertion_sorter = InsertionSort.new(['a','c','b'])
-    assert_equal ['a', 'c', 'b'], insertion_sorter.array
+    assert_equal ['a', 'c', 'b'], insertion_sorter.list
   end
 
   def test_can_sort_an_array_of_numbers

@@ -7,14 +7,13 @@ module SortingSuite
     end
 
     def sort
-      sorted_list = []
       sliced_list = slice_array_into_pairs
       if list.length > 1
-        sorted_list = merge(sliced_list)
+        sorted_pairs = sort_pairs(sliced_list)
+        sorted_list = merge_all_pairs(sorted_pairs)
       else
         sorted_list = sliced_list
       end
-      sorted_list
     end
 
     def slice_array_into_pairs
@@ -25,7 +24,7 @@ module SortingSuite
       end
     end
 
-    def merge(list)
+    def sort_pairs(list)
       list.each do |pair|
         first_num = pair[0]
         second_num = pair[1]
@@ -35,6 +34,10 @@ module SortingSuite
           pair[0], pair[1] = pair[1], pair[0]
         end
       end
+      list
+    end
+
+    def merge_all_pairs(list)
       while list[-2] != nil
         new_array = merge_two_arrays(list[-2], list[-1])
         list.pop

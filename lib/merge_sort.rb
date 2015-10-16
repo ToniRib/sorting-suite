@@ -7,13 +7,10 @@ module SortingSuite
     end
 
     def sort
+      return list if list.length < 2
       sliced_list = slice_array_into_pairs
-      if list.length > 1
-        sorted_pairs = sort_pairs(sliced_list)
-        sorted_list = merge_all_pairs(sorted_pairs)
-      else
-        sorted_list = sliced_list
-      end
+      sorted_pairs = sort_pairs(sliced_list)
+      sorted_list = merge_all_pairs(sorted_pairs)
     end
 
     def slice_array_into_pairs

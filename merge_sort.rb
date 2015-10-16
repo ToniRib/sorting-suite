@@ -12,7 +12,12 @@ class MergeSort
   def sort
     sorted_list = []
     sliced_list = slice_array_into_pairs
-    sorted_list = merge(sliced_list)
+    if list.length > 1
+      sorted_list = merge(sliced_list)
+    else
+      sorted_list = sliced_list
+    end
+    sorted_list
   end
 
   def slice_array_into_pairs
@@ -33,5 +38,35 @@ class MergeSort
       end
     end
     list
+  end
+
+  def merge_two_arrays(arr1, arr2)
+    # binding.pry
+    num_times = arr1.length + arr2.length - 1
+    num1 = arr1.shift
+    num2 = arr2.shift
+    new_array = []
+    num_times.times do |i|
+      if num1 <= num2
+        new_array << num1
+        if !arr1.empty?
+          num1 = arr1.shift
+        elsif !arr2.empty?
+          num1 = arr2.shift
+        else
+          new_array << num2
+        end
+      else
+        new_array << num2
+        if !arr2.empty?
+          num2 = arr2.shift
+        elsif !arr1.empty?
+          num2 = arr1.shift
+        else
+          new_array << num1
+        end
+      end
+    end
+    new_array
   end
 end

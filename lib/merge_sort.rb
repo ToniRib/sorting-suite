@@ -14,11 +14,7 @@ module SortingSuite
     end
 
     def slice_array_into_pairs
-      if list.length > 2
-        sliced_list = list.each_slice(2).to_a
-      else
-        sliced_list = list
-      end
+      sliced_list = list.length > 2 ? list.each_slice(2).to_a : list
     end
 
     def sort_pairs(list)

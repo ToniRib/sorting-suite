@@ -9,7 +9,7 @@ module SortingSuite
     def sort
       return list if list.length < 2
       sliced_list = slice_array_into_pairs
-      sorted_pairs = sort_pairs(sliced_list)
+      sorted_pairs = sort_each_pair(sliced_list)
       sorted_list = merge_all_pairs(sorted_pairs)
     end
 
@@ -17,8 +17,8 @@ module SortingSuite
       sliced_list = list.length > 2 ? list.each_slice(2).to_a : list
     end
 
-    def sort_pairs(list)
-      list.each do |pair|
+    def sort_each_pair(list_of_pairs)
+      list_of_pairs.each do |pair|
         first_num = pair[0]
         second_num = pair[1]
         if second_num == nil
@@ -27,14 +27,13 @@ module SortingSuite
           pair[0], pair[1] = pair[1], pair[0]
         end
       end
-      list
+      list_of_pairs
     end
 
     def merge_all_pairs(list)
       while list[-2] != nil
         new_array = merge_two_arrays(list[-2], list[-1])
-        list.pop
-        list.pop
+        2.times { list.pop }
         list.push(new_array)
       end
       list.flatten

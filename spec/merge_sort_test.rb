@@ -48,7 +48,7 @@ class MergeSortTest < Minitest::Test
 
   def test_can_sort_pairs_in_an_array
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal [[3,5], [2, 6], [3, 9], [1,2], [4, 6], [6, 8]], merge_sorter.sort_pairs(([[5, 3], [2, 6], [9, 3], [1, 2], [6, 4], [6, 8]]))
+    assert_equal [[3,5], [2, 6], [3, 9], [1,2], [4, 6], [6, 8]], merge_sorter.sort_each_pair(([[5, 3], [2, 6], [9, 3], [1, 2], [6, 4], [6, 8]]))
   end
 
   def test_can_merge_two_1_by_2_arrays

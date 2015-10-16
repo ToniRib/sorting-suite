@@ -49,7 +49,7 @@ class MergeSortTest < Minitest::Test
 
   def test_can_accept_an_array_of_numbers
     merge_sorter = MergeSort.new([3, 4, 2, 1])
-    assert_equal [3, 4, 2, 1], merge_sorter.array
+    assert_equal [3, 4, 2, 1], merge_sorter.list
   end
 
   def test_can_sort_an_array_of_numbers

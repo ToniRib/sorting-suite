@@ -1,4 +1,5 @@
 # TODO: implement namespace
+# TODO: figure out recursion...
 
 require 'pry'
 
@@ -32,16 +33,24 @@ class MergeSort
     list.each do |pair|
       first_num = pair[0]
       second_num = pair[1]
-      if first_num > second_num
-        # binding.pry
+      # binding.pry
+      if second_num == nil
+        break
+      elsif  first_num > second_num
         pair[0], pair[1] = pair[1], pair[0]
       end
     end
-    list
+    while list[-2] != nil
+      # binding.pry
+      new_array = merge_two_arrays(list[-2], list[-1])
+      list.pop
+      list.pop
+      list.push(new_array)
+    end
+    list.flatten
   end
 
   def merge_two_arrays(arr1, arr2)
-    # binding.pry
     num_times = arr1.length + arr2.length - 1
     num1 = arr1.shift
     num2 = arr2.shift

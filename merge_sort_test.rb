@@ -47,7 +47,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_can_merge_two_1_by_2_arrays
-    merge_sorter = MergeSort.new([1, 2, 3, 4])
+    merge_sorter = MergeSort.new
     assert_equal [1, 2, 3, 4], merge_sorter.merge_two_arrays([1, 2], [3, 4])
   end
 
@@ -57,13 +57,11 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_can_sort_an_array_of_numbers
-    # skip
     merge_sorter = MergeSort.new([3, 4, 2, 1])
     assert_equal [1, 2, 3, 4], merge_sorter.sort
   end
 
   def test_can_sort_a_large_array_of_numbers
-    skip
     merge_sorter = MergeSort.new([9, 3, 5, 1, 7, 8, 2, 4, 6])
     assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], merge_sorter.sort
   end

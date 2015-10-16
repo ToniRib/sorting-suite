@@ -16,9 +16,7 @@ module SortingSuite
       right = arr[mid..-1]
       num1 = merge_sort(left)
       num2 = merge_sort(right)
-      # puts "num1 is: #{num1}"
-      # puts "num2 is: #{num2}"
-      # p merge_two_arrays(num1, num2)
+      merge_two_arrays(num1, num2)
     end
 
     def merge_two_arrays(arr1, arr2)

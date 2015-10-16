@@ -27,9 +27,8 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_can_sort_an_array_of_numbers
-    skip
     merge_sorter = SortingSuite::MergeSort.new([3, 4, 2, 1])
-    assert_equal [1, 2, 3, 4], merge_sorter.sort
+    assert_equal [1, 2, 3, 4], merge_sorter.merge_sort([3, 4, 2, 1])
   end
 
   def test_can_sort_a_large_array_of_numbers

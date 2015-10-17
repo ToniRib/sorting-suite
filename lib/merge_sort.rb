@@ -2,21 +2,15 @@ require 'pry'
 
 module SortingSuite
   class MergeSort
-    attr_reader :list
-
-    def initialize(list = [])
-      @list = list
-    end
-
     def merge_sort(arr)
       # binding.pry
       return arr if arr.length < 2
       mid = arr.length / 2
       left = arr[0..mid-1]
       right = arr[mid..-1]
-      num1 = merge_sort(left)
-      num2 = merge_sort(right)
-      merge_two_arrays(num1, num2)
+      left = merge_sort(left)
+      right = merge_sort(right)
+      merge_two_arrays(left, right)
     end
 
     def merge_two_arrays(arr1, arr2)

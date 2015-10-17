@@ -78,6 +78,16 @@ class MergeSortTest < Minitest::Test
     assert_equal [0, 1, 1, 3, 4, 5], merge_sorter.sort([4, 3, 5, 1, 1, 0])
   end
 
+  def test_can_sort_a_presorted_array
+    merge_sorter = SortingSuite::MergeSort.new
+    assert_equal [1, 2, 3, 4], merge_sorter.sort([1, 2, 3, 4])
+  end
+
+  def test_can_sort_a_reverse_array
+    merge_sorter = SortingSuite::MergeSort.new
+    assert_equal [1, 2, 3, 4], merge_sorter.sort([4, 3, 2, 1])
+  end
+
   def test_can_sort_an_array_of_letters
     merge_sorter = SortingSuite::MergeSort.new
     assert_equal %w(a b c d), merge_sorter.sort(%w(d b a c))

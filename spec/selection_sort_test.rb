@@ -38,6 +38,16 @@ class SelectionSortTest < Minitest::Test
     assert_equal sorted, selection_sorter.sort(unsorted)
   end
 
+  def test_can_sort_a_presorted_array
+    selection_sorter = SortingSuite::SelectionSort.new
+    assert_equal [1, 2, 3, 4], selection_sorter.sort([1, 2, 3, 4])
+  end
+
+  def test_can_sort_a_reverse_array
+    selection_sorter = SortingSuite::SelectionSort.new
+    assert_equal [1, 2, 3, 4], selection_sorter.sort([4, 3, 2, 1])
+  end
+
   def test_can_sort_an_array_of_letters
     selection_sorter = SortingSuite::SelectionSort.new
     assert_equal %w(a b c d e), selection_sorter.sort(%w(e c d b a))

@@ -35,6 +35,16 @@ class InsertionSortTest < Minitest::Test
     assert_equal sorted, insertion_sorter.sort(unsorted)
   end
 
+  def test_can_sort_a_presorted_array
+    insertion_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2, 3, 4], insertion_sorter.sort([1, 2, 3, 4])
+  end
+
+  def test_can_sort_a_reverse_array
+    insertion_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2, 3, 4], insertion_sorter.sort([4, 3, 2, 1])
+  end
+
   def test_can_sort_an_empty_array_in_place
     inplace_sorter = SortingSuite::InsertionSort.new
     assert_equal [], inplace_sorter.inplace_sort([])
@@ -65,6 +75,16 @@ class InsertionSortTest < Minitest::Test
     unsorted = [4, 3, 5, 1, 1, 0]
     sorted = [0, 1, 1, 3, 4, 5]
     assert_equal sorted, insertion_sorter.inplace_sort(unsorted)
+  end
+
+  def test_can_sort_a_presorted_array_in_place
+    insertion_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2, 3, 4], insertion_sorter.inplace_sort([1, 2, 3, 4])
+  end
+
+  def test_can_sort_a_reverse_array_in_place
+    insertion_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2, 3, 4], insertion_sorter.inplace_sort([4, 3, 2, 1])
   end
 
   def test_in_place_sort_does_not_create_new_array

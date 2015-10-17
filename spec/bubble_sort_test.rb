@@ -33,6 +33,16 @@ class BubbleSortTest < Minitest::Test
     assert_equal sorted, bubble_sorter.sort(unsorted)
   end
 
+  def test_can_sort_a_presorted_array
+    bubble_sorter = SortingSuite::BubbleSort.new
+    assert_equal [1, 2, 3, 4], bubble_sorter.sort([1, 2, 3, 4])
+  end
+
+  def test_can_sort_a_reverse_array
+    bubble_sorter = SortingSuite::BubbleSort.new
+    assert_equal [1, 2, 3, 4], bubble_sorter.sort([4, 3, 2, 1])
+  end
+
   def test_can_sort_an_array_of_letters
     bubble_sorter = SortingSuite::BubbleSort.new
     assert_equal %w(e j k r), bubble_sorter.sort(%w(j e r k))

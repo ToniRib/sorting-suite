@@ -1,5 +1,3 @@
-require 'pry'
-
 module SortingSuite
   class InsertionSort
     def sort(arr)

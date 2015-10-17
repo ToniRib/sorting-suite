@@ -4,9 +4,13 @@
 ### Overview
 Provides a suite of algorithms and tests for three types of sorting:
 1. Bubble Sort
+
 2. Insertion Sort
+
   - includes both an in-place sort and a sort that creates a new array
+
 3. Merge Sort
+
 4. Selection Sort
 
 All classes of sort are contained in the module SortingSuite, which acts as a namespace. New instances can be created by performing the following:

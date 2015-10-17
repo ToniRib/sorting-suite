@@ -13,7 +13,12 @@ class MergeSortTest < Minitest::Test
 
   def test_can_detect_an_array_of_one_number
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal true, merge_sorter.single?([2])
+    assert merge_sorter.single?([2])
+  end
+
+  def test_rejects_an_array_of_two_numbers
+    merge_sorter = SortingSuite::MergeSort.new
+    refute merge_sorter.single?([1, 2])
   end
 
   def test_can_sort_a_pair_of_numbers

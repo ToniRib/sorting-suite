@@ -21,7 +21,7 @@ module SortingSuite
       loop do
         n1 = arr1[i]
         n2 = arr2[j]
-        if n1 == return_smallest_number(n1, n2)
+        if n1 <= n2
           new_array << n1
           i += 1
         else
@@ -40,10 +40,6 @@ module SortingSuite
 
     def sort_pair(num1, num2)
       num1 <= num2 ? [num1, num2] : [num2, num1]
-    end
-
-    def return_smallest_number(num1, num2)
-      return num1 <= num2 ? num1 : num2
     end
   end
 end

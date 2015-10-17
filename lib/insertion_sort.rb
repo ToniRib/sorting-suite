@@ -1,3 +1,5 @@
+require 'pry'
+
 module SortingSuite
   class InsertionSort
     def sort(arr)
@@ -19,7 +21,16 @@ module SortingSuite
     end
 
     def inplace_sort(arr)
-      []
+      return arr if arr.empty? || arr.length == 1
+      1.upto(arr.length - 1) do |i|
+        i.times do |j|
+          if arr[i] < arr[j]
+            arr.insert(j, arr[i])
+            arr.delete_at(i + 1)
+          end
+        end
+      end
+      arr
     end
   end
 end

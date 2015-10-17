@@ -39,4 +39,14 @@ class InsertionSortTest < Minitest::Test
     inplace_sorter = SortingSuite::InsertionSort.new
     assert_equal [], inplace_sorter.inplace_sort([])
   end
+
+  def test_can_sort_a_single_digit_array_in_place
+    inplace_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1], inplace_sorter.inplace_sort([1])
+  end
+
+  def test_can_sort_a_two_digit_array_in_place
+    inplace_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2], inplace_sorter.inplace_sort([2, 1])
+  end
 end

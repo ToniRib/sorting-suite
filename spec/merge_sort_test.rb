@@ -23,7 +23,10 @@ class MergeSortTest < Minitest::Test
 
   def test_can_merge_two_arrays
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal [1, 2, 3, 4, 5, 6], merge_sorter.merge_two_arrays([2, 4], [1, 3, 5, 6])
+    arr1 = [2, 4]
+    arr2 = [1, 3, 5, 6]
+    sorted = [1, 2, 3, 4, 5, 6]
+    assert_equal sorted, merge_sorter.merge_two_arrays(arr1, arr2)
   end
 
   def test_can_sort_an_empty_array
@@ -53,16 +56,25 @@ class MergeSortTest < Minitest::Test
 
   def test_can_sort_an_array_of_eight_numbers
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal [1, 2, 3, 4, 5, 7, 8, 9], merge_sorter.sort([9, 3, 5, 1, 7, 8, 2, 4])
+    unsorted = [9, 3, 5, 1, 7, 8, 2, 4]
+    sorted = [1, 2, 3, 4, 5, 7, 8, 9]
+    assert_equal sorted, merge_sorter.sort(unsorted)
   end
 
   def test_can_sort_an_array_of_nine_numbers
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], merge_sorter.sort([8, 1, 4, 3, 9, 7, 2, 6, 5])
+    unsorted = [8, 1, 4, 3, 9, 7, 2, 6, 5]
+    sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert_equal sorted, merge_sorter.sort(unsorted)
+  end
+
+  def test_can_sort_an_array_with_duplicate_numbers
+    merge_sorter = SortingSuite::MergeSort.new
+    assert_equal [0, 1, 1, 3, 4, 5], merge_sorter.sort([4, 3, 5, 1, 1, 0])
   end
 
   def test_can_sort_an_array_of_letters
     merge_sorter = SortingSuite::MergeSort.new
-    assert_equal ['a', 'b', 'c', 'd'], merge_sorter.sort(['d', 'b', 'a', 'c'])
+    assert_equal %w(a b c d), merge_sorter.sort(%w(d b a c))
   end
 end

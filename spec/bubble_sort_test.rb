@@ -21,19 +21,16 @@ class BubbleSortTest < Minitest::Test
     assert_equal [1], bubble_sorter.sort([1])
   end
 
-  def test_can_sort_an_array_of_numbers
+  def test_can_sort_an_array_of_four_numbers
     bubble_sorter = SortingSuite::BubbleSort.new
     assert_equal [2, 3, 5, 7], bubble_sorter.sort([5, 3, 7, 2])
   end
 
-  def test_can_sort_a_large_array_of_numbers
-    bubble_sorter = SortingSuite::BubbleSort.new
-    assert_equal [1, 2, 3, 4, 6, 7, 8, 14, 34, 78, 90], bubble_sorter.sort([3, 14, 8, 90, 4, 2, 6, 78, 34, 1, 7])
-  end
-
   def test_can_sort_an_array_with_duplicate_numbers
     bubble_sorter = SortingSuite::BubbleSort.new
-    assert_equal [1, 2, 3, 4, 4, 7, 8, 8, 9], bubble_sorter.sort([7, 2, 4, 9, 4, 8, 8, 1, 3])
+    unsorted = [7, 2, 4, 4, 1, 3]
+    sorted = [1, 2, 3, 4, 4, 7]
+    assert_equal sorted, bubble_sorter.sort(unsorted)
   end
 
   def test_can_sort_an_array_of_letters

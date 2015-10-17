@@ -3,7 +3,7 @@ module SortingSuite
     def sort(arr)
       return arr if arr.length < 2
       mid = arr.length / 2
-      left = arr[0..mid-1]
+      left = arr[0..mid - 1]
       right = arr[mid..-1]
       left = sort(left)
       right = sort(right)

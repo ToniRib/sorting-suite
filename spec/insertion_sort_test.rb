@@ -3,7 +3,7 @@ require './lib/insertion_sort'
 
 class InsertionSortTest < Minitest::Test
   def test_class_exists
-    assert SortingSuite::InsertionSort, "Oh no! Class InsertionSort doesn't exist!"
+    assert SortingSuite::InsertionSort, "Class InsertionSort doesn't exist!"
   end
 
   def test_can_initialize_an_instance
@@ -23,11 +23,15 @@ class InsertionSortTest < Minitest::Test
 
   def test_can_sort_an_array_of_numbers
     insertion_sorter = SortingSuite::InsertionSort.new
-    assert_equal [1, 2, 3, 4, 5, 7, 8], insertion_sorter.sort([5, 2, 8, 3, 7, 1, 4])
+    unsorted = [5, 2, 3, 7, 1, 4]
+    sorted = [1, 2, 3, 4, 5, 7]
+    assert_equal sorted, insertion_sorter.sort(unsorted)
   end
 
   def test_can_sort_an_array_with_duplicate_numbers
     insertion_sorter = SortingSuite::InsertionSort.new
-    assert_equal [0, 1, 1, 3, 4, 5, 5, 7, 9], insertion_sorter.sort([4, 3, 5, 7, 5, 9, 1, 1, 0])
+    unsorted = [4, 3, 5, 1, 1, 0]
+    sorted = [0, 1, 1, 3, 4, 5]
+    assert_equal sorted, insertion_sorter.sort(unsorted)
   end
 end

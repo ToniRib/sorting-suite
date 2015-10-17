@@ -17,5 +17,9 @@ module SortingSuite
       end
       sorted
     end
+
+    def inplace_sort(arr)
+      []
+    end
   end
 end

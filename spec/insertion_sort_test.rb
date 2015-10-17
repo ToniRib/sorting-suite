@@ -34,4 +34,9 @@ class InsertionSortTest < Minitest::Test
     sorted = [0, 1, 1, 3, 4, 5]
     assert_equal sorted, insertion_sorter.sort(unsorted)
   end
+
+  def test_can_sort_an_empty_array_in_place
+    inplace_sorter = SortingSuite::InsertionSort.new
+    assert_equal [], inplace_sorter.inplace_sort([])
+  end
 end

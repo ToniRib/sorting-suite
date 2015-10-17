@@ -11,21 +11,6 @@ class MergeSortTest < Minitest::Test
     assert_equal SortingSuite::MergeSort, merge_sorter.class
   end
 
-  def test_can_detect_an_array_of_one_number
-    merge_sorter = SortingSuite::MergeSort.new
-    assert merge_sorter.single?([2])
-  end
-
-  def test_rejects_an_array_of_two_numbers
-    merge_sorter = SortingSuite::MergeSort.new
-    refute merge_sorter.single?([1, 2])
-  end
-
-  def test_can_sort_a_pair_of_numbers
-    merge_sorter = SortingSuite::MergeSort.new
-    assert_equal [1, 2], merge_sorter.sort_pair(2, 1)
-  end
-
   def test_can_merge_two_arrays
     merge_sorter = SortingSuite::MergeSort.new
     arr1 = [2, 4]

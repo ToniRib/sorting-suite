@@ -11,36 +11,15 @@ module SortingSuite
     end
 
     def merge_two_arrays(arr1, arr2)
-      return sort_pair(arr1[0], arr2[0]) if single?(arr1) && single?(arr2)
       sorted = []
-      i = 0
-      j = 0
-      loop do
-        n1 = arr1[i]
-        n2 = arr2[j]
-        if n1 <= n2
-          sorted << n1
-          i += 1
+      until arr1.empty? || arr2.empty?
+        if arr1[0] <= arr2[0]
+          sorted << arr1.shift
         else
-          sorted << n2
-          j += 1
+          sorted << arr2.shift
         end
-        break if i == arr1.length || j == arr2.length
       end
-      if i == arr1.length
-        sorted << arr2[j..-1]
-      else
-        sorted << arr1[i..-1]
-      end
-      sorted.flatten
-    end
-
-    def single?(arr)
-      arr.length == 1
-    end
-
-    def sort_pair(num1, num2)
-      num1 <= num2 ? [num1, num2] : [num2, num1]
+      sorted.push(arr1).push(arr2).flatten
     end
   end
 end

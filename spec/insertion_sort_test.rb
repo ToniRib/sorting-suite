@@ -49,4 +49,28 @@ class InsertionSortTest < Minitest::Test
     inplace_sorter = SortingSuite::InsertionSort.new
     assert_equal [1, 2], inplace_sorter.inplace_sort([2, 1])
   end
+
+  def test_can_sort_an_array_of_numbers_in_place
+    inplace_sorter = SortingSuite::InsertionSort.new
+    assert_equal [1, 2, 3, 4, 5], inplace_sorter.inplace_sort([2, 1, 4, 5, 3])
+  end
+
+  def test_can_sort_an_array_of_letters_in_place
+    inplace_sorter = SortingSuite::InsertionSort.new
+    assert_equal %w(a b c d), inplace_sorter.inplace_sort(%w(d b c a))
+  end
+
+  def test_can_sort_an_array_with_duplicate_numbers_in_place
+    insertion_sorter = SortingSuite::InsertionSort.new
+    unsorted = [4, 3, 5, 1, 1, 0]
+    sorted = [0, 1, 1, 3, 4, 5]
+    assert_equal sorted, insertion_sorter.inplace_sort(unsorted)
+  end
+
+  def test_in_place_sort_does_not_create_new_array
+    inplace_sorter = SortingSuite::InsertionSort.new
+    unsorted = [5, 3, 6, 2, 4, 1]
+    sorted = inplace_sorter.inplace_sort(unsorted)
+    assert_equal sorted.object_id, unsorted.object_id
+  end
 end

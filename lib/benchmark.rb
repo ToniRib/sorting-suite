@@ -7,43 +7,26 @@ require 'pry'
 module SortingSuite
   class Benchmark
     def fastest(set = [])
-      bubble_time = calculate_time(SortingSuite::BubbleSort, set)
-      insertion_time = calculate_time(SortingSuite::BubbleSort, set)
-      merge_time = calculate_time(SortingSuite::BubbleSort, set)
+      times = calculate_all_sort_times(set)
 
-      fastest_sort = calculate_fastest(bubble_time, insertion_time, merge_time)
+      fastest_sort = times.key(times.values.min)
 
       return_message(fastest_sort, 'fastest')
     end
 
     def slowest(set = [])
-      bubble_time = calculate_time(SortingSuite::BubbleSort, set)
-      insertion_time = calculate_time(SortingSuite::BubbleSort, set)
-      merge_time = calculate_time(SortingSuite::BubbleSort, set)
+      times = calculate_all_sort_times(set)
 
-      slowest_sort = calculate_slowest(bubble_time, insertion_time, merge_time)
+      slowest_sort = times.key(times.values.max)
 
       return_message(slowest_sort, 'slowest')
     end
 
-    def calculate_fastest(bubble, insertion, merge)
-      if bubble < insertion && bubble < merge
-        :bubble
-      elsif insertion < bubble && insertion < merge
-        :insertion
-      else
-        :merge
-      end
-    end
-
-    def calculate_slowest(bubble, insertion, merge)
-      if bubble > insertion && bubble > merge
-        :bubble
-      elsif insertion > bubble && insertion > merge
-        :insertion
-      else
-        :merge
-      end
+    def calculate_all_sort_times(set)
+      bubble_time = calculate_time(SortingSuite::BubbleSort, set)
+      insertion_time = calculate_time(SortingSuite::BubbleSort, set)
+      merge_time = calculate_time(SortingSuite::BubbleSort, set)
+      {:bubble => bubble_time, :insertion => insertion_time, :merge => merge_time}
     end
 
     def return_message(sort_type, adjective)

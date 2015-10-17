@@ -2,12 +2,12 @@ module SortingSuite
   class SelectionSort
     def sort(arr = [])
       return [] if arr.empty?
-      sorted_array = []
+      sorted = []
       until arr.empty?
-        sorted_array << arr.min
+        sorted << arr.min
         arr.delete_at(arr.index(arr.min))
       end
-      sorted_array
+      sorted
     end
   end
 end

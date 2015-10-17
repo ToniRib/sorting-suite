@@ -12,27 +12,27 @@ module SortingSuite
 
     def merge_two_arrays(arr1, arr2)
       return sort_pair(arr1[0], arr2[0]) if single?(arr1) && single?(arr2)
-      new_array = []
+      sorted = []
       i = 0
       j = 0
       loop do
         n1 = arr1[i]
         n2 = arr2[j]
         if n1 <= n2
-          new_array << n1
+          sorted << n1
           i += 1
         else
-          new_array << n2
+          sorted << n2
           j += 1
         end
         break if i == arr1.length || j == arr2.length
       end
       if i == arr1.length
-        new_array << arr2[j..-1]
+        sorted << arr2[j..-1]
       else
-        new_array << arr1[i..-1]
+        sorted << arr1[i..-1]
       end
-      new_array.flatten
+      sorted.flatten
     end
 
     def single?(arr)

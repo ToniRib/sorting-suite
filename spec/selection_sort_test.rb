@@ -33,7 +33,9 @@ class SelectionSortTest < Minitest::Test
 
   def test_can_sort_an_array_with_duplicate_numbers
     selection_sorter = SortingSuite::SelectionSort.new
-    assert_equal [1, 2, 3, 4, 4, 5, 6], selection_sorter.sort([5, 3, 6, 4, 1, 2, 4])
+    unsorted = [5, 3, 6, 4, 1, 2, 4]
+    sorted = [1, 2, 3, 4, 4, 5, 6]
+    assert_equal sorted, selection_sorter.sort(unsorted)
   end
 
   def test_can_sort_an_array_of_letters

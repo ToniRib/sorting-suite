@@ -11,12 +11,49 @@ module SortingSuite
       insertion_time = calculate_time(SortingSuite::BubbleSort, set)
       merge_time = calculate_time(SortingSuite::BubbleSort, set)
 
-      if bubble_time < insertion_time && bubble_time < merge_time
-        'BubbleSort is the fastest!'
-      elsif insertion_time < bubble_time && insertion_time < merge_time
-        'InsertionSort is the fastest!'
+      fastest_sort = calculate_fastest(bubble_time, insertion_time, merge_time)
+
+      return_message(fastest_sort, 'fastest')
+    end
+
+    def slowest(set = [])
+      bubble_time = calculate_time(SortingSuite::BubbleSort, set)
+      insertion_time = calculate_time(SortingSuite::BubbleSort, set)
+      merge_time = calculate_time(SortingSuite::BubbleSort, set)
+
+      slowest_sort = calculate_slowest(bubble_time, insertion_time, merge_time)
+
+      return_message(slowest_sort, 'slowest')
+    end
+
+    def calculate_fastest(bubble, insertion, merge)
+      if bubble < insertion && bubble < merge
+        :bubble
+      elsif insertion < bubble && insertion < merge
+        :insertion
       else
-        'MergeSort is the fastest!'
+        :merge
+      end
+    end
+
+    def calculate_slowest(bubble, insertion, merge)
+      if bubble > insertion && bubble > merge
+        :bubble
+      elsif insertion > bubble && insertion > merge
+        :insertion
+      else
+        :merge
+      end
+    end
+
+    def return_message(sort_type, adjective)
+      case sort_type
+      when :bubble
+        "BubbleSort is the #{adjective}!"
+      when :insertion
+        "InsertionSort is the #{adjective}!"
+      when :merge
+        "MergeSort is the #{adjective}!"
       end
     end
 

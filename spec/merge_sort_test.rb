@@ -11,6 +11,11 @@ class MergeSortTest < Minitest::Test
     assert_equal SortingSuite::MergeSort, merge_sorter.class
   end
 
+  def test_can_return_the_smallest_number
+    merge_sorter = SortingSuite::MergeSort.new
+    assert_equal 2, merge_sorter.return_smallest_number(4, 2)
+  end
+
   def test_can_sort_an_empty_array
     merge_sorter = SortingSuite::MergeSort.new
     assert_equal [], merge_sorter.merge_sort([])

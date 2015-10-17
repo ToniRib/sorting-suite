@@ -1,10 +1,7 @@
-require 'pry'
-
 module SortingSuite
   class MergeSort
 
     def merge_sort(arr)
-      # binding.pry
       return arr if arr.length < 2
       mid = arr.length / 2
       left = arr[0..mid-1]

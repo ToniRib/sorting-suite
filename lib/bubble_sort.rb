@@ -1,23 +1,17 @@
 module SortingSuite
   class BubbleSort
-    attr_reader :list
-
-    def initialize(list = [])
-      @list = list
-    end
-
-    def sort
+    def sort(arr)
       loop do
         swapped = false
-        0.upto(list.length - 2) do |i|
-          if list[i + 1] < list[i]
-            list[i], list[i + 1] = list[i + 1], list[i]
+        0.upto(arr.length - 2) do |i|
+          if arr[i + 1] < arr[i]
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
             swapped = true
           end
         end
         break unless swapped
       end
-      list
+      arr
     end
   end
 end

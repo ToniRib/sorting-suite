@@ -1,26 +1,20 @@
 module SortingSuite
   class InsertionSort
-    attr_reader :list
-
-    def initialize(list = [])
-      @list = list
-    end
-
-    def sort
-      list.empty? ? sorted_list = [] : sorted_list = [list.shift]
-      until list.empty? do
-        current_num = list.shift
-        0.upto(sorted_list.size) do |n|
-          if current_num <= sorted_list[n]
-            sorted_list.insert(n, current_num)
+    def sort(arr)
+      arr.empty? ? sorted_arr = [] : sorted_arr = [arr.shift]
+      until arr.empty? do
+        current_num = arr.shift
+        0.upto(sorted_arr.size) do |n|
+          if current_num <= sorted_arr[n]
+            sorted_arr.insert(n, current_num)
             break
-          elsif n == sorted_list.size - 1
-            sorted_list.push(current_num)
+          elsif n == sorted_arr.size - 1
+            sorted_arr.push(current_num)
             break
           end
         end
       end
-      sorted_list
+      sorted_arr
     end
   end
 end

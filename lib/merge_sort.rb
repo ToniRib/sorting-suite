@@ -1,6 +1,5 @@
 module SortingSuite
   class MergeSort
-
     def sort(arr)
       return arr if arr.length < 2
       mid = arr.length / 2
@@ -14,7 +13,8 @@ module SortingSuite
     def merge_two_arrays(arr1, arr2)
       return sort_pair(arr1[0], arr2[0]) if single?(arr1) && single?(arr2)
       new_array = []
-      i, j = [0, 0]
+      i = 0
+      j = 0
       loop do
         n1 = arr1[i]
         n2 = arr2[j]

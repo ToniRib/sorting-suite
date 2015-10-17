@@ -3,6 +3,7 @@
 
 ### Overview
 Provides a suite of algorithms and tests for three types of sorting:
+
 1. Bubble Sort
 
 2. Insertion Sort

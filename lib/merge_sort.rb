@@ -27,7 +27,11 @@ module SortingSuite
         end
         break if i == arr1.length || j == arr2.length
       end
-      i == arr1.length ? new_array << arr2[j..-1] : new_array << arr1[i..-1]
+      if i == arr1.length
+        new_array << arr2[j..-1]
+      else
+        new_array << arr1[i..-1]
+      end
       new_array.flatten
     end
 

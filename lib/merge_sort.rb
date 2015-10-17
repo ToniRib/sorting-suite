@@ -1,13 +1,13 @@
 module SortingSuite
   class MergeSort
 
-    def merge_sort(arr)
+    def sort(arr)
       return arr if arr.length < 2
       mid = arr.length / 2
       left = arr[0..mid-1]
       right = arr[mid..-1]
-      left = merge_sort(left)
-      right = merge_sort(right)
+      left = sort(left)
+      right = sort(right)
       merge_two_arrays(left, right)
     end
 

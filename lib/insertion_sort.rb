@@ -1,7 +1,8 @@
 module SortingSuite
   class InsertionSort
     def sort(arr)
-      arr.empty? ? sorted_arr = [] : sorted_arr = [arr.shift]
+      return [] if arr.empty?
+      sorted_arr = [arr.shift]
       until arr.empty?
         current_num = arr.shift
         0.upto(sorted_arr.size) do |n|

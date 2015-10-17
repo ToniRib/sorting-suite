@@ -1,5 +1,6 @@
 # Sorting Suite
 ## Turing Module 1: Project 1 (Echo)
+Author: Toni Rib
 
 ### Overview
 Provides a suite of algorithms and tests for three types of sorting:

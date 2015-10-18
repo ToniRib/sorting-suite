@@ -30,20 +30,59 @@ Iterates through the provided array multiple times, each time comparing two cons
 
 More information: [Wikipedia: Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
 
+##### Example
+
+```
+bubble_sorter = SortingSuite::BubbleSort.new
+bubble_sorter.sort([5, 3, 4, 2, 1])
+=> [1, 2, 3, 4, 5]
+```
+
 #### Insertion Sort
 Iterates through the provided array, pulling one element at a time and inserting it into the correct position in a new array, or sorting within the same array if inplace_sort is chosen.
 
 More information: [Wikipedia: Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
+
+##### Examples
+
+```
+insertion_sorter = SortingSuite::InsertionSort.new
+insertion_sorter.sort([5, 3, 4, 2, 1])
+=> [1, 2, 3, 4, 5]
+
+insertion_sorter.inplace_sort(%w(d b c a b))
+=> [a, b, c, d, e]
+
+arr = [3, 5, 4, 2, 1]
+SortingSuite::InsertionSort.new(arr).sort.object_id == arr.object_id
+=> true
+```
 
 #### Merge Sort
 A sorting method based on recursion. The provided array is split in half recursively until each piece is only one element. Then, the array is merged back together one piece at a time, ensuring each new (larger) array is sorted properly.
 
 More information: [Wikipedia: Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
 
+##### Example
+
+```
+merge_sorter = SortingSuite::MergeSort.new
+merge_sorter.sort([5, 3, 4, 2, 1])
+=> [1, 2, 3, 4, 5]
+```
+
 #### Selection Sort
 Iterates through the provided array, finding the current minimum in the array and placing it in a new array. The minimum is then removed from the original array.
 
 More information: [Wikipedia: Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
+
+##### Example
+
+```
+selection_sorter = SortingSuite::SelectionSort.new
+selection_sorter.sort([5, 3, 4, 2, 1])
+=> [1, 2, 3, 4, 5]
+```
 
 ### Benchmarking
 

@@ -91,6 +91,6 @@ class InsertionSortTest < Minitest::Test
     inplace_sorter = SortingSuite::InsertionSort.new
     unsorted = [5, 3, 6, 2, 4, 1]
     sorted = inplace_sorter.inplace_sort(unsorted)
-    assert_equal sorted.object_id, unsorted.object_id
+    assert_same sorted, unsorted
   end
 end

@@ -1,42 +1,38 @@
 require_relative 'bubble_sort'
 require_relative 'insertion_sort'
 require_relative 'merge_sort'
+require_relative 'selection_sort'
+
+require 'pry'
 
 module SortingSuite
   class Benchmark
     def fastest(set = [])
       times = calculate_all_sort_times(set)
-
-      fastest_sort = times.key(times.values.min)
-
-      return_message(fastest_sort, 'fastest')
+      return_message(times.key(times.values.min), 'fastest')
     end
 
     def slowest(set = [])
       times = calculate_all_sort_times(set)
-
-      slowest_sort = times.key(times.values.max)
-
-      return_message(slowest_sort, 'slowest')
+      return_message(times.key(times.values.max), 'slowest')
     end
 
     def calculate_all_sort_times(set)
       bubble_time = calculate_time(SortingSuite::BubbleSort, set)
       insertion_time = calculate_time(SortingSuite::BubbleSort, set)
       merge_time = calculate_time(SortingSuite::BubbleSort, set)
+      selection_time = calculate_time(SortingSuite::SelectionSort, set)
 
-      { bubble: bubble_time, insertion: insertion_time, merge: merge_time }
+      {
+        bubble: bubble_time,
+        insertion: insertion_time,
+        merge: merge_time,
+        selection: selection_time
+      }
     end
 
     def return_message(sort_type, adjective)
-      case sort_type
-      when :bubble
-        "BubbleSort is the #{adjective}!"
-      when :insertion
-        "InsertionSort is the #{adjective}!"
-      when :merge
-        "MergeSort is the #{adjective}!"
-      end
+      "#{sort_type.to_s.capitalize}Sort is the #{adjective}!"
     end
 
     def time(sort_type, set = [])

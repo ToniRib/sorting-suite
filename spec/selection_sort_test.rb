@@ -11,6 +11,11 @@ class SelectionSortTest < Minitest::Test
     assert_equal SortingSuite::SelectionSort, selection_sorter.class
   end
 
+  def test_can_find_the_minimum_of_an_array
+    selection_sorter = SortingSuite::SelectionSort.new
+    assert_equal 1, selection_sorter.find_min([5, 3, 6, 4, 1, 2])
+  end
+
   def test_can_sort_an_empty_array
     selection_sorter = SortingSuite::SelectionSort.new
     assert_equal [], selection_sorter.sort

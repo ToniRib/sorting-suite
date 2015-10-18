@@ -5,7 +5,7 @@
 #
 # Examples
 #
-#   sorter = SortingSuite::BubbleSort.n1ew
+#   sorter = SortingSuite::BubbleSort.new
 #   sorter.sort([6, 3, 2, 4, 5, 1])
 #   # => [1, 2, 3, 4, 5, 6]
 #

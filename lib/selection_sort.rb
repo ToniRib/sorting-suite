@@ -15,9 +15,11 @@ module SortingSuite
 
     def find_min(arr)
       minimum = arr[0]
+
       arr.length.times do |i|
         minimum = arr[i] if arr[i] < minimum
       end
+
       minimum
     end
   end

@@ -3,8 +3,6 @@ require_relative 'insertion_sort'
 require_relative 'merge_sort'
 require_relative 'selection_sort'
 
-require 'pry'
-
 module SortingSuite
   class Benchmark
     def fastest(set = [])
@@ -51,8 +49,3 @@ module SortingSuite
     end
   end
 end
-
-# benchmark = SortingSuite::Benchmark.new
-# set = (1..100).to_a.shuffle
-# puts benchmark.time(SortingSuite::InsertionSort, set)
-# puts benchmark.time(SortingSuite::MergeSort)

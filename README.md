@@ -1,6 +1,5 @@
 # Sorting Suite
 ## Turing Module 1: Project 1 (Echo)
-Author: Toni Rib
 
 ### Overview
 Provides a suite of algorithms and tests for three types of sorting:
@@ -50,7 +49,7 @@ More information: [Wikipedia: Selection Sort](https://en.wikipedia.org/wiki/Sele
 
 The suite also comes with a benchmarker allows the user to determine which method is fastest or slowest for a particular type of sorting. It also includes a 'time' method to allow for timing a specific sorting type.
 
-At this time, the benchmarker only allows for the sort methods for BubbleSort, InsertionSort, MergeSort, and SelectionSort. It does not include timing or comparison for the in-place selection sort.
+At this time, the benchmarker only allows for the sort methods for BubbleSort, InsertionSort, MergeSort, and SelectionSort. It does not include timing or comparison for the in-place insertion sort.
 
 Note: Depending on the array, because some of the methods take very close to the same amount of time to run, the benchmarker may return different methods for fastest & slowest for each run.
 

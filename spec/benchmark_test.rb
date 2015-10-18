@@ -17,4 +17,10 @@ class BenchmarkTest < Minitest::Test
     message = 'BubbleSort is the slowest!'
     assert_equal message, benchmark.slowest([1, 2, 3, 4, 5])
   end
+
+  def test_returns_correct_message
+    benchmark = SortingSuite::Benchmark.new
+    message = 'BubbleSort is the slowest!'
+    assert_equal message, benchmark.return_message(:bubble, 'slowest')
+  end
 end

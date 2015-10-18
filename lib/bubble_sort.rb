@@ -1,6 +1,18 @@
+# Public: Sort an array using the bubble sort method.
+#         Part of the SortingSuite module.
+#
+# arr  - The Array to be sorted
+#
+# Examples
+#
+#   sorter = SortingSuite::BubbleSort.n1ew
+#   sorter.sort([6, 3, 2, 4, 5, 1])
+#   # => [1, 2, 3, 4, 5, 6]
+#
+# Returns the sorted Array.
 module SortingSuite
   class BubbleSort
-    def sort(arr)
+    def sort(arr = [])
       loop do
         swapped = false
 

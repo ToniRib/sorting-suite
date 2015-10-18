@@ -13,7 +13,7 @@ class BubbleSortTest < Minitest::Test
 
   def test_can_sort_an_empty_array
     bubble_sorter = SortingSuite::BubbleSort.new
-    assert_equal [], bubble_sorter.sort([])
+    assert_equal [], bubble_sorter.sort
   end
 
   def test_can_sort_a_single_digit_array

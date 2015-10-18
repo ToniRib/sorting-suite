@@ -1,6 +1,18 @@
+# Public: Sort an array using the merge sort method.
+#         Part of the SortingSuite module.
+#
+# arr  - The Array to be sorted
+#
+# Examples
+#
+#   sorter = SortingSuite::MergeSort.new
+#   sorter.sort([6, 3, 2, 4, 5, 1])
+#   # => [1, 2, 3, 4, 5, 6]
+#
+# Returns the sorted Array.
 module SortingSuite
   class MergeSort
-    def sort(arr)
+    def sort(arr = [])
       return arr if arr.length < 2
 
       mid = arr.length / 2

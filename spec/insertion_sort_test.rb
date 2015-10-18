@@ -13,7 +13,7 @@ class InsertionSortTest < Minitest::Test
 
   def test_can_sort_an_empty_array
     insertion_sorter = SortingSuite::InsertionSort.new
-    assert_equal [], insertion_sorter.sort([])
+    assert_equal [], insertion_sorter.sort
   end
 
   def test_can_sort_a_single_digit_array

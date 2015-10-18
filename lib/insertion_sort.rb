@@ -1,6 +1,21 @@
+# Public: Sort an array using the insertion sort method. Default sort method
+#         returns a new Array while inplace_sort sorts the Array in place.
+#         Part of the SortingSuite module.
+#
+# arr  - The Array to be sorted
+#
+# Examples
+#
+#   sorter = SortingSuite::InsertionSort.new
+#   sorter.sort([6, 3, 2, 4, 5, 1])
+#   # => [1, 2, 3, 4, 5, 6]
+#   sorter.inplace_sort(['a', 'd', 'c', 'b'])
+#   # => ['a', 'b', 'c', 'd']
+#
+# Returns the sorted Array.
 module SortingSuite
   class InsertionSort
-    def sort(arr)
+    def sort(arr = [])
       return [] if arr.empty?
 
       sorted = [arr.shift]
@@ -22,7 +37,7 @@ module SortingSuite
       sorted
     end
 
-    def inplace_sort(arr)
+    def inplace_sort(arr = [])
       return arr if arr.empty? || arr.length == 1
 
       1.upto(arr.length - 1) do |i|

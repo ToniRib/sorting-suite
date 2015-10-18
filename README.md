@@ -108,3 +108,34 @@ puts benchmark.time(SortingSuite::InsertionSort, set)
 puts benchmark.time(SortingSuite::MergeSort)
 => MergeSort took 2.0e-06 seconds
 ```
+
+### Test Suite
+
+Each sort type has a corresponding testing file written with [minitest](https://github.com/seattlerb/minitest) which can be run from the terminal using mrspec:
+
+```
+$ mrspec spec/bubble_sort.rb
+BubbleSort
+  can sort an array of four numbers
+  can sort a single digit array
+  can sort an array of letters
+  can sort a reverse array
+  class exists
+  can initialize an instance
+  can sort a presorted array
+  can sort an array with duplicate numbers
+  can sort an empty array
+
+Failures:
+
+Finished in 0.00176 seconds (files took 0.08604 seconds to load)
+9 examples, 0 failures
+```
+
+You can also run all the tests at the same time by running the `mrspec` command from the terminal in the project's base directory.
+
+#### Dependencies
+
+Must have the [mrspec gem](https://github.com/JoshCheek/mrspec) and [minitest gem](https://github.com/seattlerb/minitest) installed.
+
+Alternatively, you could run the tests without using mrspec if you modify the first line of each test to be `require 'minitest/autorun'`.

@@ -41,9 +41,12 @@ module SortingSuite
     end
 
     def calculate_time(sort_type, set)
+      sorter = sort_type.new
+
       t1 = Time.now
-      sort_type.new.sort(set)
+      sorter.sort(set)
       t2 = Time.now
+
       t2 - t1
     end
   end

@@ -45,6 +45,6 @@ class BubbleSortTest < Minitest::Test
 
   def test_can_sort_an_array_of_letters
     bubble_sorter = SortingSuite::BubbleSort.new
-    assert_equal %w(e j k r), bubble_sorter.sort(%w(j e r k))
+    assert_equal %w(a b c d), bubble_sorter.sort(%w(d b a c))
   end
 end

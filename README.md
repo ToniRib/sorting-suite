@@ -2,7 +2,7 @@
 ## Turing Module 1: Project 1 (Echo)
 
 ### Overview
-Provides a suite of algorithms and tests for three types of sorting:
+Provides a suite of algorithms and tests for four types of sorting:
 
 1. Bubble Sort
 
